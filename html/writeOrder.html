@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>填写订单</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/Swiper/3.4.2/css/swiper.min.css">
+    <link rel="stylesheet" href="../css/font.css">
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+    <div id="order" class="flexv wrap">
+        <div class="flexitemv mainbox">
+            <!--头部-->
+            <div class="flex center head">
+                <a href="javascript:;" class="flex center xg xg-left"></a>
+                <h1 class="flexitem center">填写订单</h1>
+            </div>
+            <!--地址-->
+            <a href="mySite.html" class="around site">
+                <i class="flex center xg xg-location"></i>
+                <!--<span class="flexitem center">请点击选择收货地址</span>-->
+                <div class="flexitemv centerh message">
+                    <div class="name"><span>季梦佳</span><span>18921219035</span></div>
+                    <div class="sites"><span>江苏省</span><span>无锡市</span><span>崇安区</span><span>广益哥伦布二期1202室1202室1202室1202室</span></div>
+                </div>
+                <i class="flex center xg xg-right"></i>
+            </a>
+            <!--订单信息-->
+            <div class="martop padlft orderinfo">
+                <div class="between title">
+                    <div class="flex centerv">
+                        <i class="flex"></i>
+                        <span class="flex center">鲜果商城</span>
+                    </div>
+                    <span class="flex center">3日后发货</span>
+                </div>
+                <div class="flex centerv goods">
+                    <div class="goods-img"><img src="../image/goods.jpg" class="fitimg"></div>
+                    <div class="flexitemv cont">
+                        <h2 class="flex">黄金百香果</h2>
+                        <div class="flex centerv base">
+                            <i class="flex center xg xg-cooperate"></i>
+                            <span class="flex">合作基地</span>
+                        </div>
+                        <div class="between price">
+                            <div class="flex endv cost">
+                                <span>¥36.8</span>
+                                <p>¥56.8</p>
+                            </div>
+                            <div class="flex end">
+                                <i>5 斤装</i>
+                                <i>x 2</i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="money">
+                    <div class="between real">
+                        <span>商品实付</span>
+                        <span>&yen;36.8</span>
+                    </div>
+                    <div class="between freight">
+                        <span>运费<i>（特价包邮）</i></span>
+                        <span>&yen;0</span>
+                    </div>
+                </div>
+                <div class="flex end total">合计：<em>&yen;36.8</em></div>
+            </div>
+            <!--支付方式-->
+            <div class="martop padlft payment">
+                <div class="way">支付方式</div>
+                <div class="between name">
+                    <div class="flex payname wechat">
+                        <i class="xg xg-wechat"></i>
+                        <span class="flex center">微信支付</span>
+                    </div>
+                    <i class="flex center xg xg-confirm"></i>
+                </div>
+                <div class="between name">
+                    <div class="flex payname zfb">
+                        <i class="xg xg-zfb"></i>
+                        <span class="flex center">支付宝</span>
+                    </div>
+                    <i class="flex center xg xg-hollow"></i>
+                </div>
+            </div>
+        </div>
+        <!--去支付-->
+        <div class="between padlft checkou">
+            <div class="flex center chk-box">
+                <span>付款</span><span class="sum">&yen;36.8</span><i>（为你节省20元）</i>
+            </div>
+            <a href="javascript:;" class="flex center btn">去支付<i class="flex xg xg-rights"></i></a>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
+<script src="../js/footer.js"></script>
+<script type="text/javascript">
+    // 支付方式状态切换
+    $(".name>i").click(function () {
+        $(this).addClass("xg-confirm").removeClass("xg-hollow");
+        $(this).parent().siblings().children("i").removeClass("xg-confirm").addClass("xg-hollow")
+    });
+    // 填写收货地址后的图标颜色及地址彩带
+    if(!$(".site").hasClass("message")){
+        $(".site i").first().css("color","#8ecc55");
+        $(".site").addClass("show")
+    }
+
+</script>
+</html>

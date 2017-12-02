@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>修改收货地址</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/Swiper/3.4.2/css/swiper.min.css">
+    <link rel="stylesheet" href="../css/font.css">
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+<div id="newsite" class="flexv wrap">
+    <!--头部-->
+    <div class="flex center head">
+        <a href="javascript:;" class="flex center xg xg-left"></a>
+        <h1 class="flexitem center">修改收货地址</h1>
+    </div>
+    <!--地址信息-->
+    <form action="" class="flexv padlft">
+        <label class="around input">
+            <span class="flex centerv">收货人</span>
+            <input type="text" class="flexitem" placeholder="收货人姓名">
+            <i class="flex center xg xg-right"></i>
+        </label>
+        <label class="around input">
+            <span class="flex centerv">手机号码</span>
+            <input type="tel" class="flexitem" placeholder="配送员联系您的电话" maxlength="11">
+            <i class="flex center xg xg-right"></i>
+        </label>
+        <label class="around input">
+            <span class="flex centerv">所在城市</span>
+            <input id="sel_city" readonly="readonly" class="flexitem" placeholder="选择您所在的城市">
+            <i class="flex center xg xg-right"></i>
+        </label>
+        <label class="around input site">
+            <span class="flex centerv">收货地址</span>
+            <input type="text" class="flexitem">
+            <em class="flex center hint"><i class="xg xg-location"></i>小区/写字楼</em>
+            <i class="flex center xg xg-right"></i>
+        </label>
+        <label class="around input">
+            <span class="flex centerv">楼号门牌</span>
+            <input type="text" class="flexitem" placeholder="楼号/单元/门牌号">
+            <i class="flex center xg xg-right"></i>
+        </label>
+    </form>
+    <div class="btnbox">
+        <a href="javascript:;" class="flex center marbotm save">保存收货信息</a>
+        <a href="javascript:;" class="flex center delbtn">删除收货信息</a>
+    </div>
+</div>
+</body>
+<script src="https://cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
+<script src="../js/footer.js"></script>
+<script src="../js/city.js"></script>
+<script src="../js/picker.min.js"></script>
+<script src="../js/city-js.js"></script>
+<script type="text/javascript">
+    //    input 提示图标
+    $('.site input').on('input propertychange',function(){
+        var val = $(this).val();
+        if(val.length > 0) {
+            $('.site .hint').hide();
+        }else{
+            $('.site .hint').show();
+        }
+    })
+</script>
+</html>

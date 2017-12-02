@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>新增收货地址</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/Swiper/3.4.2/css/swiper.min.css">
+    <link rel="stylesheet" href="../css/font.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <style type="text/css">
+        .error{
+            background:rgba(0,0,0,.5);
+            padding:1rem 2rem;
+            position:fixed;
+            top:40%;
+            left:50%;
+            transform:translateX(-50%);
+            border-radius:0.5rem;
+            color:#fff;
+            font-size:1.2rem;
+        }
+    </style>
+</head>
+<body>
+<div id="newsite" class="flexv wrap">
+    <!--头部-->
+    <div class="flex center head">
+        <a href="javascript:;" class="flex center xg xg-left"></a>
+        <h1 class="flexitem center">新增收货地址</h1>
+    </div>
+    <!--地址信息-->
+    <form action="" class="flexv padlft">
+        <label class="around input user">
+            <span class="flex centerv">收货人</span>
+            <input type="text" class="flexitem" placeholder="收货人姓名" required>
+            <i class="flex center xg xg-right"></i>
+        </label>
+        <label class="around input phone">
+            <span class="flex centerv">手机号码</span>
+            <input type="tel" class="flexitem" placeholder="配送员联系您的电话" maxlength="11" required>
+            <i class="flex center xg xg-right"></i>
+        </label>
+        <label class="around input city">
+            <span class="flex centerv">所在城市</span>
+            <input id="sel_city" readonly="readonly" class="flexitem" placeholder="选择您所在的城市" required>
+            <i class="flex center xg xg-right"></i>
+        </label>
+        <label class="around input site">
+            <span class="flex centerv">收货地址</span>
+            <input type="text" class="flexitem">
+            <em class="flex center hint"><i class="xg xg-location"></i>小区/写字楼</em>
+            <i class="flex center xg xg-right"></i>
+        </label>
+        <label class="around input number">
+            <span class="flex centerv">楼号门牌</span>
+            <input type="text" class="flexitem" placeholder="楼号/单元/门牌号">
+            <i class="flex center xg xg-right"></i>
+        </label>
+    </form>
+    <div class="btnbox">
+        <a href="javascript:;" class="flex center marbotm save">保存收货信息</a>
+    </div>
+</div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="../js/footer.js"></script>
+<script src="../js/city.js"></script>
+<script src="../js/picker.min.js"></script>
+<script src="../js/city-js.js"></script>
+<script type="text/javascript">
+//  加载就获取第一个光标
+    window.onload=function () {
+        $(".user").find('input').focus();
+    };
+//  input 提示图标
+    $('.site input').on('input propertychange',function(){
+        var val = $(this).val();
+        if(val.length > 0) {
+            $('.site .hint').hide();
+        }else{
+            $('.site .hint').show();
+        }
+    });
+//  表单验证
+    $("a.save").click(function () {
+        var user = $(".user").find('input'),text1 = user.attr('placeholder'),val1 = user.val();
+        var phone = $(".phone").find('input'),text2 = phone.attr('placeholder'),val2 = phone.val();
+        var city = $(".city").find('input'),text3 = city.attr('placeholder'),val3 = city.val();
+        var site = $(".site").find('input'),text4 = site.attr('placeholder'),val4 = site.val();
+        var number = $(".number").find('input'),text5 = number.attr('placeholder'),val5 = number.val();
+        // 表单验证正则
+        var h=/^[\u4e00-\u9fa5]{2,}$/;
+        var d=/^[1][3|4|5|6|7|8][0-9]{9}$/;
+        //收货人
+        if(val1 === text1 || val1 === ""){
+            alert(user.siblings().eq(0).text());
+            user.focus();
+            return false;
+        }else if(!val1.match(h)){
+            alert(user.siblings().eq(0).text());
+            user.focus();
+            return false;
+        }
+        //手机号
+        if(val2 === text2 || val2 === ""){
+            alert(phone.siblings().eq(0).text());
+            phone.focus();
+            return false;
+        }else if(!val2.match(d)){
+            alert(phone.siblings().eq(0).text());
+            phone.focus();
+            return false;
+        }
+        //城市
+        if(val3 === text3 || val3 === ""){
+            alert(city.siblings().eq(0).text());
+            city.focus();
+            return false;
+        }
+        //地址
+        if(val3 === text4 || val4 === ""){
+            alert(site.siblings().eq(0).text());
+            site.focus();
+            return false;
+        }
+        //门牌号
+        if(val3 === text5 || val5 === ""){
+            alert(number.siblings().eq(0).text());
+            number.focus();
+            return false;
+        }
+    });
+    //弹框文本
+    var timer = null;
+    function alert(tex) {
+        var alert = $('<div class="error">请正确填写' + tex+ '</div>');
+        $('form').append(alert);
+    }
+    timer = setInterval(function () {
+        if(!$(".error").is(":hidden")){
+            $(".error").remove();
+        }
+    },2000);
+</script>
+</html>

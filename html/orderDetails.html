@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>订单详情</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/Swiper/3.4.2/css/swiper.min.css">
+    <link rel="stylesheet" href="../css/font.css">
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+<div id="orderdetails" class="flexv wrap">
+    <div class="flexitemv mainbox">
+        <!--头部-->
+        <div class="flex center head">
+            <a href="javascript:;" class="flex center xg xg-left"></a>
+            <h1 class="flexitem center">订单详情</h1>
+        </div>
+        <div class="flexv">
+            <!--待发货 已发货 交易成功-->
+            <div class="between state"><span class="flex center">待发货</span><span class="flex center time">2017/10/10 14:25:50</span></div>
+            <div class="around site">
+                <i class="flex center xg xg-location"></i>
+                <div class="flexitemv centerh message">
+                    <div class="name"><span>季梦佳</span><span>18921219035</span></div>
+                    <div class="sites"><span>江苏省</span><span>无锡市</span><span>崇安区</span><span>广益哥伦布二期1202室1202室1202室1202室</span></div>
+                </div>
+            </div>
+        </div>
+        <!--订单号-->
+        <div class="martop padlft orderinfo">
+            <div class="title number">订单号：<span>525252525252525252020202021</span></div>
+            <div class="between title states">
+                <div class="flexv centerh">
+                    <span class="flex">包裹</span>
+                    <em class="flex">快递将于10月25日发货，请耐心等待</em>
+                </div>
+                <!--待发货 已发货 已签收-->
+                <span class="flex center">待发货</span>
+            </div>
+            <div class="flex centerv goods">
+                <div class="goods-img"><img src="../image/goods.jpg" class="fitimg"></div>
+                <div class="flexitemv cont">
+                    <h2 class="flex">黄金百香果</h2>
+                    <div class="flex centerv base">
+                        <i class="flex center xg xg-cooperate"></i>
+                        <span class="flex">合作基地</span>
+                    </div>
+                    <div class="between price">
+                        <div class="flex endv cost">
+                            <span>&yen;36.8</span>
+                            <p>&yen;56.8</p>
+                        </div>
+                        <div class="flex end">
+                            <i>5 斤装</i>
+                            <i>x 2</i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--发货后-->
+            <div class="flex endh rear">
+                <a href="refund.html" class="flex center refund">申请退款</a>
+                <a href="logistics.html" class="flex center look">查看物流</a>
+            </div>
+            <div class="between goodsreal">
+                <span>商品总额</span>
+                <span>&yen;36.8</span>
+            </div>
+            <div class="between freight">
+                <span>运费</span>
+                <span>免运费</span>
+            </div>
+        </div>
+        <div class="martop between sum">
+            <span>合计</span>
+            <span>&yen;36.8</span>
+        </div>
+        <a href="javascript:;" class="flex center delbtn">删除订单</a>
+        <a href="javascript:;" class="flex center paybtn">去支付</a>
+    </div>
+</div>
+</body>
+<script src="https://cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
+<script src="../js/footer.js"></script>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>我的订单</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/Swiper/3.4.2/css/swiper.min.css">
+    <link rel="stylesheet" href="../css/font.css">
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+<div id="myindent" class="flexv wrap">
+    <div class="flexitemv mainbox">
+        <!--头部-->
+        <div class="flex center head">
+            <a href="javascript:;" class="flex center xg xg-left"></a>
+            <h1 class="flexitem center">我的订单</h1>
+            <a href="javascript:;" class="flex center xg xg-service servicebtn"></a>
+        </div>
+        <!--没有订单-->
+        <!--<div class="flexv center none">
+            <img src="../image/indent_bj.png">
+            <p>您还没有相关订单</p>
+        </div>-->
+        <!--有订单-->
+        <div class="marbotm padlft orderinfo">
+            <div class="flex end title">
+                <span class="flex center">已发货</span>
+            </div>
+            <div class="flex centerv goods">
+                <div class="goods-img"><img src="../image/goods.jpg" class="fitimg"></div>
+                <div class="flexitemv cont">
+                    <h2 class="flex">黄金百香果</h2>
+                    <div class="flex centerv base">
+                        <i class="flex center xg xg-cooperate"></i>
+                        <span class="flex">合作基地</span>
+                    </div>
+                    <div class="between price">
+                        <div class="flex endv cost">
+                            <span>¥36.8</span>
+                            <p>¥56.8</p>
+                        </div>
+                        <div class="flex end">
+                            <i>5 斤装</i>
+                            <i>x 2</i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="between money">
+                <div class="flex centerv">
+                    <span>实付：</span><em>¥ 16.8</em>
+                </div>
+                <div class="details">
+                    <a href="orderDetails.html" class="flex center btn">查看详情</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--弹窗-->
+    <div id="alert">
+        <div class="servicebox">
+            <div class="flexv center service">
+                <div class="qrcodebox">
+                    <img src="http://yun.zhzxj.cn/default/user_qrcode_private.jpg" class="fitimg">
+                </div>
+                <p>长按识别二维码</p>
+                <p>联系客服查询物流</p>
+            </div>
+            <a href="javascript:;" class="flex center cancel">取消</a>
+        </div>
+    </div>
+</div>
+</body>
+<script src="https://cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
+<script src="../js/footer.js"></script>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>鲜果商城</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/Swiper/3.4.2/css/swiper.min.css">
+    <link rel="stylesheet" href="../css/font.css">
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+<div id="home" class="flexv wrap">
+    <div class="flexitemv mainbox">
+        <!--头部-->
+        <div class="flex center head">
+            <h1 class="flexitem center">鲜果商城</h1>
+        </div>
+        <!--轮播-->
+        <div class="flex banner">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img class="fitimg" src="../image/banner-1.jpg"/></div>
+                    <div class="swiper-slide"><img class="fitimg" src="../image/banner-2.jpg"/></div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+        <!--菜单-->
+        <div class="around nav">
+            <div class="flexv center">
+                <span class="flex"></span>
+                <em class="flex center">优选严选</em>
+            </div>
+            <div class="flexv center">
+                <span class="flex"style="background-position:-3.7rem 0;"></span>
+                <em class="flex center">安全检测</em>
+            </div>
+            <div class="flexv center">
+                <span class="flex"style="background-position:-7.3rem 0;"></span>
+                <em class="flex center">期付保障</em>
+            </div>
+        </div>
+        <!--每日抢单-->
+        <div class="flexv daily">
+            <div class="flex center grab">每日抢单</div>
+            <div class="flex centerv goods">
+                <div class="goods-img"><img src="http://yun.tpiao8.cn/image/jpeg/5a0e5a434d291.jpeg" class="fitimg"></div>
+                <div class="flexitemv cont">
+                    <h2 class="flex">黄金百香果</h2>
+                    <p class="flex">仿佛吃到上百种水果的香甜</p>
+                    <div class="flex centerv base">
+                        <i class="flex center xg xg-cooperate"></i>
+                        <span class="flex">合作基地</span>
+                    </div>
+                    <div class="between price">
+                        <div class="flex endv cost">
+                            <span>&yen; 16.8</span>
+                            <p>&yen; 26.8</p>
+                        </div>
+                        <div class="flex end">
+                            <a href="products.html" class="flex center btn">去抢单</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="feedback.html" class="flexitem center none">
+            <i class="xg xg-noitems"></i>
+            <p>没有商品啦~告诉我你想吃啥?</p>
+        </a>
+    </div>
+    <div class="around tabbars">
+        <a href="index.html" class="flexv center home current">
+            <i class="flex center xg xg-classify-l"></i>
+            <em class="flex center current">首页</em>
+        </a>
+        <a href="javascript:;" class="flexv center servicebtn">
+            <i class="flex center xg xg-service"></i>
+            <em class="flex center">联系客服</em>
+        </a>
+        <a href="mine.html" class="flexv center mine">
+            <i class="flex center xg xg-mine"></i>
+            <em class="flex center">我的</em>
+        </a>
+    </div>
+    <!--弹窗-->
+    <div id="alert">
+        <div class="servicebox">
+            <div class="flexv center service">
+                <div class="qrcodebox">
+                    <img src="http://yun.zhzxj.cn/default/user_qrcode_private.jpg" class="fitimg">
+                </div>
+                <p>长按识别二维码</p>
+                <p>联系客服查询物流</p>
+            </div>
+            <a href="javascript:;" class="flex center cancel">取消</a>
+        </div>
+    </div>
+</div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/Swiper/3.4.2/js/swiper.min.js"></script>
+<script src="../js/footer.js"></script>
+<script type="text/javascript">
+    new Swiper ('.swiper-container', {
+        loop: true,
+        autoplay:2500,
+        pagination: '.swiper-pagination',
+        autoplayDisableOnInteraction:false
+    });
+</script>
+</html>

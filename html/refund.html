@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>申请退款</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/Swiper/3.4.2/css/swiper.min.css">
+    <link rel="stylesheet" href="../css/font.css">
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+<div id="refund" class="flexv wrap">
+    <div class="flexitemv mainbox">
+        <!--头部-->
+        <div class="flex center head">
+            <a href="javascript:;" class="flex center xg xg-left"></a>
+            <h1 class="flexitem center">申请退款</h1>
+        </div>
+        <form class="flexv refinfo">
+            <div class="flex centerv marbotm conts">
+                <div class="goods-img"><img src="../image/goods.jpg" class="fitimg"></div>
+                <div class="flexitemv cont">
+                    <h2 class="flex">黄金百香果</h2>
+                    <div class="flex centerv base">
+                        <i class="flex center xg xg-cooperate"></i>
+                        <span class="flex">合作基地</span>
+                    </div>
+                    <div class="between price">
+                        <div class="flex endv cost">
+                            <span>¥ 16.8</span>
+                            <p>¥ 26.8</p>
+                        </div>
+                        <div class="flex end">5 斤装</div>
+                    </div>
+                </div>
+            </div>
+            <a href="javascript:;" class="between marbotm conts servicebtn">
+                <div class="flex center">退款原因</div>
+                <div class="flex center text">请选择<i class="flex center xg xg-right"></i></div>
+            </a>
+            <div class="marbotm refmoney conts">退款金额：<em>&yen; 16.80</em></div>
+            <div class="marbotm max">最多<em>&yen;16.80</em>,含发货邮费<em>&yen;0.00</em></div>
+            <label class="flex conts explain">
+                <span class='flex'>退款说明：</span>
+                <textarea name="" id="tip_content" class="flexitem" rows="8" placeholder="选填"></textarea>
+            </label>
+        </form>
+    </div>
+    <a href="javascript:;" class="flex center button">提交</a>
+    <!--弹框-->
+    <div id="alert">
+        <form class="servicebox">
+            <div class="flex center title">退款原因</div>
+            <div class="padlft service">
+                <label class="between texts">
+                    <span class='flex center'>不喜欢/不想要</span>
+                    <input type="radio" name="radio">
+                </label>
+                <label class="between texts">
+                    <span class='flex center'>空包裹</span>
+                    <input type="radio"  name="radio">
+                </label>
+                <label class="between texts">
+                    <span class='flex center'>未按约定时间发货</span>
+                    <input type="radio"  name="radio">
+                </label>
+                <label class="between texts">
+                    <span class='flex center'>快递/物流一直未送到</span>
+                    <input type="radio"  name="radio">
+                </label>
+                <label class="between texts">
+                    <span class='flex center'>快递/物流无跟踪记录</span>
+                    <input type="radio"  name="radio">
+                </label>
+            </div>
+            <!--<a href="javascript:;" class="flex center cancel">关闭</a>-->
+        </form>
+    </div>
+</div>
+</body>
+<script src="https://cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
+<script src="../js/footer.js"></script>
+<script type="text/javascript">
+    $("input[type=radio]").click(function () {
+      $(".servicebtn .text").text($(this).siblings().text());
+        $("#alert").removeClass("show").css("visibility","hidden");
+    });
+    // 提交
+    $("a.button").click(function () {
+        var text = $(".servicebtn .text").text(),val = $(".explain textarea").val();
+        if(text !== "请选择" || val !== ""){
+            console.log("提交了");
+        }
+    });
+  
+</script>
+</html>

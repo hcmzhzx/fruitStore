@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>购物车</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/Swiper/3.4.2/css/swiper.min.css">
+    <link rel="stylesheet" href="../css/font.css">
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+<div id="shopcar" class="flexv wrap">
+    <div class="flexitemv mainbox">
+        <!--头部-->
+        <div class="flex center head">
+            <a href="javascript:;" class="flex center xg xg-left"></a>
+            <h1 class="flexitem center">我的购物车</h1>
+        </div>
+        <!--商品名-->
+        <div class="flexv goodsname">
+            <div class="between deliver">
+                <div class="flex center time">
+                    <span class="flex">3日后发货</span>
+                </div>
+                <a href="javascript:;"  class="flex center text">
+                    <em class="flex">实付满69包邮,还差31.2元去凑单</em>
+                    <i class="flex xg xg-right"></i>
+                </a>
+            </div>
+            <div class="flex centerv goods">
+                <i class="flex xg xg-confirm switch"></i>
+                <div class="goods-img"><img src="../image/goods.jpg" class="fitimg"></div>
+                <div class="flexitemv cont">
+                    <h2 class="flex">黄金百香果</h2>
+                    <div class="flex centerv base">
+                        <i class="flex center xg xg-cooperate"></i>
+                        <span class="flex">合作基地</span>
+                    </div>
+                    <div class="between price">
+                        <div class="flex endv cost">
+                            <span>¥ 16.8</span>
+                            <p>¥ 26.8</p>
+                        </div>
+                        <div class="flex end">5 斤装</div>
+                    </div>
+                </div>
+            </div>
+	        <!--实付金额-->
+	        <div class="martop padlft costbox">
+	            <div class="money">
+	                <div class="between real">
+	                    <span>商品实付</span>
+	                    <span>¥ 16.8</span>
+	                </div>
+	                <div class="between freight">
+	                    <span>运费<i>（实付满69包邮）</i></span>
+	                    <span>¥ 0</span>
+	                </div>
+	            </div>
+	            <div class="flex end total">合计：<em>¥ 16.8</em></div>
+	        </div>
+        </div>
+        <!--商品名-->
+        <div class="flexv goodsname">
+            <div class="between deliver">
+                <div class="flex center time">
+                    <span class="flex">3日后发货</span>
+                </div>
+                <a href="javascript:;"  class="flex center text">
+                    <em class="flex">实付满69包邮,还差31.2元去凑单</em>
+                    <i class="flex xg xg-right"></i>
+                </a>
+            </div>
+            <div class="flex centerv goods">
+                <i class="flex xg xg-hollow switch"></i>
+                <div class="goods-img"><img src="../image/goods.jpg" class="fitimg"></div>
+                <div class="flexitemv cont">
+                    <h2 class="flex">黄金百香果</h2>
+                    <div class="flex centerv base">
+                        <i class="flex center xg xg-cooperate"></i>
+                        <span class="flex">合作基地</span>
+                    </div>
+                    <div class="between price">
+                        <div class="flex endv cost">
+                            <span>¥ 16.8</span>
+                            <p>¥ 26.8</p>
+                        </div>
+                        <div class="flex end">5 斤装</div>
+                    </div>
+                </div>
+            </div>
+	        <!--实付金额-->
+	        <div class="martop padlft costbox">
+	            <div class="money">
+	                <div class="between real">
+	                    <span>商品实付</span>
+	                    <span>¥ 16.8</span>
+	                </div>
+	                <div class="between freight">
+	                    <span>运费<i>（实付满69包邮）</i></span>
+	                    <span>¥ 0</span>
+	                </div>
+	            </div>
+	            <div class="flex end total">合计：<em>¥ 16.8</em></div>
+	        </div>
+        </div>
+        
+    </div>
+    <!--结算-->
+    <div class="between padlft checkou">
+        <div class="flex center chk-box">
+            <i class="flex xg xg-hollow allbtn"></i>
+            <em class="flex">全选</em>
+            <div class="flexv">
+                <span class="flex sum">合计：<i>&yen; 16.8</i></span>
+                <span class="flex vip">会员价，运费<i>&yen; 10</i></span>
+            </div>
+        </div>
+        <a href="javascript:;" class="flex center btn">去结算<i class="flex xg xg-rights"></i>
+        </a>
+    </div>
+</div>
+</body>
+<script src="https://cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
+<script src="../js/footer.js"></script>
+<script type="text/javascript">
+    var num = $("i.switch"),alls = $(".goodsname").length;
+    num.click(function () {
+        if($(this).hasClass("xg-hollow")){
+            $(this).addClass("xg-confirm").removeClass("xg-hollow");
+        }else if($(this).hasClass("xg-confirm")){
+            $(this).addClass("xg-hollow").removeClass("xg-confirm");
+        }
+        // 单项
+        if(num.hasClass("xg-hollow")){
+            $(".chk-box .allbtn").addClass("xg-hollow").removeClass("xg-confirm");
+        }
+        var sum = 0;
+        $(num).each(function () {
+			if($(this).hasClass("xg-confirm")){sum ++;}
+        });
+        if(sum === alls){
+            $(".chk-box .allbtn").addClass("xg-confirm").removeClass("xg-hollow");
+        }
+    });
+    //  全选
+   $(".chk-box .allbtn").click(function () {
+       if($(this).hasClass("xg-confirm")){
+           $(this).addClass("xg-hollow").removeClass("xg-confirm");
+           num.addClass("xg-hollow").removeClass("xg-confirm");
+       } else if($(this).hasClass("xg-hollow")){
+           $(this).addClass("xg-confirm").removeClass("xg-hollow");
+           num.addClass("xg-confirm").removeClass("xg-hollow");
+       }
+   });
+   
+    
+
+</script>
+</html>

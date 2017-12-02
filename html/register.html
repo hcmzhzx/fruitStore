@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>登录/注册</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/Swiper/3.4.2/css/swiper.min.css">
+    <link rel="stylesheet" href="../css/font.css">
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+<div id="register" class="flexv wrap">
+    <div class="flexitemv mainbox">
+        <!--头部-->
+        <div class="flex center head">
+            <a href="javascript:;" class="flex center xg xg-left"></a>
+            <h1 class="flexitem center">登录</h1>
+        </div>
+        <!--登录框-->
+        <form action="" class="signin">
+            <label class="between input">
+                <span class="flexitem phone">
+                    <i class="flex center xg xg-phone"></i>
+                    <input type="tel" name="phone" placeholder="请输入手机号" maxlength="11" class="flexitem">
+                </span>
+                <input type="button" class="flex center btn" value="获取验证码">
+            </label>
+            <label class="flex input">
+                <i class="flex center xg xg-security"></i>
+                <input type="text" name="pwd" placeholder="请输入验证码" class="flexitem">
+            </label>
+            <div class="flex center protocol">
+                <i class="flex xg xg-confirm"></i>同意每日优鲜 <a href="javascript:;" class="flex">《用户使用协议》</a>
+            </div>
+            <a href="javascript:;" class="flex center submit">登录</a>
+            <!--弹窗提示-->
+            <div id="error"></div>
+        </form>
+    </div>
+</div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="../js/footer.js"></script>
+<script type="text/javascript">
+// 协议同意状态
+$(".protocol i").click(function () {
+    if($(this).hasClass("xg-hollow")){
+        $(this).addClass("xg-confirm").removeClass("xg-hollow");
+    }else if($(this).hasClass("xg-confirm")){
+        $(this).addClass("xg-hollow").removeClass("xg-confirm");
+    }
+});
+// 登录状态控制
+var phone='',pwd='';
+$(".input input").get(0).oninput = function () {
+    phone = $(this).val();
+    if(phone !=="" && pwd !==""){
+        $(".submit").addClass('log')
+    } else{
+        $(".submit").removeClass('log')
+    }
+};
+$(".input input").get(2).oninput = function () {
+    pwd = $(this).val();
+    if(phone !=="" && pwd !==""){
+        $(".submit").addClass('log')
+    } else{
+        $(".submit").removeClass('log')
+    }
+};
+
+//短信验证码
+$("input[type=button]").click(function(){
+    if($(this).hasClass('disable')) return false;
+    var obj = $(this),url = $(this).attr('data-url'),phone = $('input[name=phone]'),value = phone.val(),text = phone.attr('placeholder');
+    // 手机号验证
+    if(value === ""){
+        $("#error").text(text+"！");
+        $("#error").fadeIn().fadeOut(2000);
+        phone.focus();
+        return false;
+    } else{
+        var reg = /^[1][3-8][0-9]{9}$/; //只允许使用数字-空格等
+        if(!reg.test(value)) {
+            $("#error").text("手机号码格式错误！");
+            $("#error").fadeIn().fadeOut(2000);
+            phone.focus();
+            return false;
+        }
+    }
+    obj.addClass('disable').val('正在发送...');
+    if($(this).hasClass('disable')){
+        smsTimer(obj,'重新获取',60,'disable');
+    }else{
+        obj.removeClass('disable').val('获取验证码');
+    }
+});
+
+
+</script>
+</html>

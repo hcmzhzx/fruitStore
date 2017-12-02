@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>我的反馈</title>
+    <link rel="stylesheet" href="../css/font.css">
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+<div id="feedback" class="flexv wrap">
+    <!--头部-->
+    <div class="flex center head">
+        <a href="javascript:;" class="flex center xg xg-left"></a>
+        <h1 class="flexitem center">我的反馈</h1>
+        <a href="javascript:;" class="flex center xg xg-service servicebtn"></a>
+    </div>
+    <form class="report-text-area">
+        <div class="text-input-wrap">
+            <textarea name="" id="tip_content" class="text-input" cols="30" rows="10" placeholder="请输入你想吃的水果~"></textarea>
+        </div>
+        <button type="button" id="button-alt">提交</button>
+    </form>
+    <!--弹窗-->
+    <div id="alert">
+        <div class="servicebox">
+            <div class="flexv center service">
+                <div class="qrcodebox">
+                    <img src="http://yun.zhzxj.cn/default/user_qrcode_private.jpg" class="fitimg">
+                </div>
+                <p>长按识别二维码</p>
+                <p>联系客服查询物流</p>
+            </div>
+            <a href="javascript:;" class="flex center cancel">取消</a>
+        </div>
+    </div>
+</div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="../js/footer.js"></script>
+<script type="text/javascript">
+    //字数统计
+    var $textInput = $('.text-input');
+    $textInput.on('focus', function(e) {
+        timer = window.setInterval(function() {
+            var text = $textInput.val();
+            var nowLen = text.length;
+            if(nowLen > 0) {
+                $("#button-alt").addClass("btn");
+            }else{
+                $("#button-alt").removeClass("btn");
+            }
+        }, 1000/60)
+    }).on('blur', function() {
+        timer && window.clearInterval(timer)
+    });
+    //提交
+    var timer = null;
+    $("#button-alt").click(function() {
+        if($(this).hasClass("btn")){
+            $('#feedback').append($('<p class="tip-msg save-ok-msg"></p>'));
+            $(".tip-msg").text("提交成功，谢谢您的反馈");
+            $("#tip_content").val("");
+            $("#button-alt").removeClass("btn");
+        }
+    });
+    timer = setInterval(function() {
+        /** 定时器执行的任务**/
+        if(!$(".tip-msg").is(":hidden")) {
+            $(".tip-msg").remove();
+        }
+    }, 3000);
+</script>
+</html>
